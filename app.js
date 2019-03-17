@@ -6,10 +6,8 @@ var bodyParser      = require("body-parser"),
     app             = express();
 
 //APP CONFIG 
-var url = process.env.DATABASEURL || "mongodb://localhost:27017/restful_blog_app";
+var url = process.env.BLOGAPPDB || "mongodb://localhost:27017/restful_blog_app";
 mongoose.connect(url, { useNewUrlParser: true });
-//mongoose.connect('mongodb+srv://Norelle:6639@cluster0-i0tnj.mongodb.net/blogapp?retryWrites=true', { useNewUrlParser: true });
-//mongoose.connect("mongodb://localhost:27017/restful_blog_app", { useNewUrlParser: true });
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
