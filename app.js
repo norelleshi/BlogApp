@@ -6,7 +6,7 @@ var bodyParser      = require("body-parser"),
     app             = express();
 
 //APP CONFIG 
-var url = process.env.BLOGAPPDB || "mongodb://localhost:27017/restful_blog_app";
+var url = process.env.BLOGAPPDB || "mongodb://localhost:27017/blogapp";
 mongoose.connect(url, { useNewUrlParser: true });
 
 app.set("view engine", "ejs");
@@ -119,3 +119,7 @@ app.delete("/blogs/:id", function(req, res){
 app.listen(process.env.PORT, process.env.IP, function(){
    console.log("Server is running!"); 
 });
+
+// app.listen(3000, () => {
+// 	console.log('sever listening on port 3000');
+// });
